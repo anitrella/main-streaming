@@ -1,6 +1,6 @@
 /* Layout */
 .container {
-  padding: 16px;
+  padding: 2.5rem 16px;
   max-width: 1440px;
   /* background-color: rebeccapurple; */
   margin: 0 auto;
@@ -8,12 +8,12 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    padding: 24px;
+    padding: 3rem 24px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container {
-    padding: 32px;
+    padding: 4rem 32px;
   }
 }

@@ -11,9 +11,21 @@ img {
   height: auto;
 }
 
-body {
-  font-weight: normal;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
   font-family: "Roboto", sans-serif;
+}
+
+span,
+label {
+  font-size: 1rem;
 }
 
 a {
@@ -29,6 +41,31 @@ a {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+@media screen and (min-width: 425px) {
+  .flex-sm-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-sm-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .ml-mobileL-auto {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex-md-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-md-column {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .justify-center {
@@ -54,6 +91,18 @@ a {
   align-items: center;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-capitalized {
+  text-transform: capitalize;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
 .d-none {
   display: none;
 }
@@ -70,4 +119,24 @@ a {
 
 .gap-4 {
   gap: 16px;
+}
+
+.gap-6 {
+  gap: 24px;
+}
+
+.gap-8 {
+  gap: 32px;
+}
+
+.gap-10 {
+  gap: 40px;
+}
+
+.color-primary {
+  color: darkred;
+}
+
+.fw-600 {
+  font-weight: 600;
 }

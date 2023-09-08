@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   public contents: IContent[] = [];
   filteredContents: IContent[] = [];
   sub!: Subscription;
+  order: 'title' | 'contentId' | undefined;
+  sort: 'desc' | 'asc' | undefined;
 
   private _listFilter = '';
   get listFilter(): string {
@@ -29,6 +31,25 @@ export class HomeComponent implements OnInit {
     return this.contents.filter((content: IContent) =>
       content.title.toLocaleLowerCase().includes(filterBy)
     );
+  }
+
+  orderBy(property: 'title' | 'contentId') {
+    this.order = property;
+    this.sort = this.sort === 'desc' ? 'asc' : 'desc';
+
+    if (this.order === 'contentId' && this.sort === 'desc') {
+      return this.performOrderContentId();
+    }
+
+    if (this.order === 'contentId' && this.sort === 'asc') {
+      return this.performOrderContentIdReverse();
+    }
+    if (this.order === 'title' && this.sort === 'desc') {
+      return this.performOrderTitle();
+    }
+    if (this.order === 'title' && this.sort === 'asc') {
+      return this.performOrderTitleReverse();
+    }
   }
 
   onDelete(event: Event) {

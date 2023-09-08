@@ -1,4 +1,3 @@
-import data from 'src/assets/json/data.json';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IGetContentResponse } from '../content';

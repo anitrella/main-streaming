@@ -3,7 +3,6 @@
   display: grid;
   place-items: center;
   gap: 16px;
-  margin-top: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -32,12 +31,6 @@
   transition: 0.2s ease-in-out;
 }
 
-@media screen and (min-width: 425px) {
-  .card {
-    max-width: 300px;
-  }
-}
-
 .card:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -59,19 +52,18 @@
   border-top-right-radius: 30px;
 }
 
-h2 {
+.card-title {
+  font-size: 1.8rem;
   color: darkred;
-  text-transform: capitalize;
 }
 
-input[type="text"] {
-  margin-left: 50px;
+.card-detail {
+  font-size: 1rem;
 }
+
 /*Search bar*/
-
-.group {
+.search-bar {
   position: relative;
-  margin-left: 2rem;
 }
 
 .input {
@@ -88,12 +80,11 @@ input[type="text"] {
 }
 
 label {
-  color: #999;
+  color: rgba(125, 32, 32, 0.55);
   font-size: 18px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
   top: 10px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -205,4 +196,24 @@ label {
 .cta-delete:hover > .icon-delete {
   transform: scale(1.5);
   cursor: pointer;
+}
+
+label {
+  font-size: 1rem;
+}
+
+header {
+  padding: 0 2rem;
+}
+
+.btn-chip {
+  border: 2px solid darkred;
+  color: darkred;
+  border-radius: 30px;
+  padding: 0.3rem 1rem;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

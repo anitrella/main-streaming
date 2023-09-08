@@ -10,7 +10,7 @@ import { IContent } from '../content';
 })
 export class ContentComponent implements OnInit {
   public content: IContent | undefined = undefined;
-
+  entries: [string, unknown][] = [];
   constructor(
     private route: ActivatedRoute,
     private ContentService: ContentService
@@ -24,11 +24,11 @@ export class ContentComponent implements OnInit {
   }
 
   getContentById(id: string): void {
-    this.ContentService.getContent().subscribe(
-      (data) =>
-        (this.content = data.data.contents.find(
-          (content) => content.contentId === id
-        ))
-    );
+    this.ContentService.getContent().subscribe((data) => {
+      this.content = data.data.contents.find(
+        (content) => content.contentId === id
+      );
+      this.entries = this.content ? Object.entries(this.content) : [];
+    });
   }
 }
