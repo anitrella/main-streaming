@@ -1,0 +1,7 @@
+<div *ngIf="content !== undefined">
+  <h1>{{ content.title }}</h1>
+  <h2 *ngIf="content.liveStatusOnAir == false; else live">
+    Non è lives status on air
+  </h2>
+  <h2><ng-template #live>E' live status</ng-template></h2>
+</div>
